@@ -23,7 +23,17 @@
   id : 평가 샘플 고유 id  
   label : 예측한 도배 하자 Class
 ---
-###
+### ✅ 개발환경
+
+---
+### ✅ 모델 선정 및 학습
+
+---
+### ✅ 결과
+리더보드(PUBLIC) : 275/1152(등)
+![image](https://github.com/2shin0/Papering-Flaw/assets/150658909/2f9504f0-a843-4bbf-a93a-31eae3dcc79c)
+
+---
 
 
 꼭 정리하고 넘어갈 내용(base line code가 돌아가지 않았던 이유 정리)
