@@ -9,18 +9,24 @@
 ---
 ### ✅ 데이터셋 설명
 1. train [폴더]
+   
   19개의 Class 폴더 내 png 파일 존재
 
 2. test [폴더]
+   
   평가용 데이터셋
   000.png ~ 791.png
 
 3. test.csv [파일]
+   
   id : 평가 샘플 고유 id
+  
   img_path : 평가 샘플의 이미지 파일 경로
 
 4. sample_submission.csv [제출양식]
+   
   id : 평가 샘플 고유 id
+  
   label : 예측한 도배 하자 Class
 ---
 ###
