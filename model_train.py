@@ -7,7 +7,7 @@ import numpy as np
 from sklearn.metrics import f1_score
 import torch.optim as optim
 
-def train_h(model, optimizer, train_loader, val_loader, scheduler, device, patience=3):
+def train(model, optimizer, train_loader, val_loader, scheduler, device, patience=3):
     model.to(device)
     criterion = nn.CrossEntropyLoss().to(device)
     best_score = 0
