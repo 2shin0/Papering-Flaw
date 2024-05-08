@@ -8,7 +8,7 @@
 4. 결과<br>
 EfficientNet_b4 사전 학습 모델을 불러와 추가 레이어를 쌓은 뒤 학습시킨 결과, F1score 0.539를 기록하였다.
 
-### ✅ 데이터셋 설명
+### 📁 데이터셋
 1. train [폴더]
 - 19개의 Class 폴더 내 png 파일 존재
 
@@ -24,7 +24,7 @@ EfficientNet_b4 사전 학습 모델을 불러와 추가 레이어를 쌓은 뒤
 - id : 평가 샘플 고유 id  
 - label : 예측한 도배 하자 Class
 
-### ✅ 개발환경
+### 🔗 개발환경 (requirements.txt)
 
 ```
 pandas==2.2.2
@@ -37,7 +37,7 @@ albumentations
 tqdm
 ```
 
-### ✅ 데이터 전처리 (processing.py)
+### 📊 데이터 전처리 (processing.py)
 1. 이미지 경로 변경
 - train data의 img_path '\\' → '/'
 - test data의 img_path './' → './data/'
@@ -51,7 +51,7 @@ image = cv2.imdecode(img_array, cv2.IMREAD_COLOR)
 
 📌 클래스 불균형이 심하여 데이터 under/oversampling을 시도했으나, 성능이 오히려 낮아져서 적용하지 않았다.
 
-### ✅ 모델 선정 및 학습 
+### 📈 모델 선정 및 학습 (model.py, model_train.py)
 1. 모델 선정 : EfficientNet_b4<br>
 EfficientNet은 이미지 분류 작업에 있어서 효율적이고 우수한 성능을 보이는 딥러닝 모델이다. 네트워크의 깊이, 너비, 해상도의 크기를 조절하여 최적의 모델 구조를 찾아내는 compound scaling 방법을 적용하여 최소한의 파라미터로 높은 성능을 낸다. EfficientNet b0~b7 중 개발환경과 성능을 고려하여 b4를 선정하였다.
 
