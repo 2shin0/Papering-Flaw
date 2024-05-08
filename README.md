@@ -7,7 +7,8 @@
 (가구수정, 걸레받이수정, 곰팡이, 꼬임, 녹오염, 들뜸, 면불량, 몰딩수정, 문틀창틀수정, 반점, 석고수정, 오염, 오타공, 울음, 이음부불량, 터짐, 틈새과다, 피스, 훼손)
 4. 결과<br>
 EfficientNet_b4 사전 학습 모델을 불러와 추가 레이어를 쌓은 뒤 학습시킨 결과, F1score 0.539를 기록하였다.
-<br>
+
+---
 
 ### 📁 데이터셋
 1. train [폴더]
@@ -24,7 +25,8 @@ EfficientNet_b4 사전 학습 모델을 불러와 추가 레이어를 쌓은 뒤
 4. sample_submission.csv [제출양식]
 - id : 평가 샘플 고유 id  
 - label : 예측한 도배 하자 Class
-<br>
+
+---
 
 ### 🔗 개발환경 (requirements.txt)
 
@@ -38,7 +40,8 @@ torchaudio
 albumentations
 tqdm
 ```
-<br>
+
+---
 
 ### 📊 데이터 전처리 (processing.py)
 1. 이미지 경로 변경
@@ -53,7 +56,8 @@ image = cv2.imdecode(img_array, cv2.IMREAD_COLOR)
 ```
 
 📌 클래스 불균형이 심하여 데이터 under/oversampling을 시도했으나, 성능이 오히려 낮아져서 적용하지 않았다.
-<br>
+
+---
 
 ### 📈 모델 선정 및 학습 (model.py, model_train.py)
 1. 모델 선정 : EfficientNet_b4<br>
@@ -68,7 +72,8 @@ labels = labels.long().to(device)
 PyTorch의 nn.CrossEntropyLoss() 손실 함수는 라벨을 long 형식으로 받는다. 따라서 정수 형식의 라벨을 long 형식으로 변환하여 손실 함수에 전달해야 한다.
 
 이 코드에서 라벨을 long 형식으로 변환하는 이유는 모델이 예상한 클래스 확률과 실제 클래스를 비교할 때 타입을 일치시키기 위해서다. 또한, GPU를 사용하는 경우에는 모든 텐서가 동일한 타입을 가져야 하므로, GPU로 데이터를 이동하기 전에 라벨을 long 형식으로 변환하는 것이 중요하다.
-<br>
+
+---
 
 ### ✅ 결과
 👍리더보드(PUBLIC) : 275/1152(등)
