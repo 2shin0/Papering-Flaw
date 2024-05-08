@@ -8,9 +8,7 @@ def inference(le, model, test_loader, device):
     with torch.no_grad():
         for imgs in tqdm(iter(test_loader)):
             imgs = imgs.float().to(device)
-            
             pred = model(imgs)
-            
             preds += pred.argmax(1).detach().cpu().numpy().tolist()
     
     preds = le.inverse_transform(preds)
