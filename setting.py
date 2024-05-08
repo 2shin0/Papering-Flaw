@@ -3,7 +3,6 @@ import os
 import numpy as np
 import torch
 
-
 CFG = {
     'IMG_SIZE':224,
     'EPOCHS':20,
@@ -11,7 +10,6 @@ CFG = {
     'BATCH_SIZE':32,
     'SEED':41
 }
-
 
 def seed_everything(seed):
     random.seed(seed)
