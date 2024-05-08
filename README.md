@@ -5,8 +5,8 @@
 2. 주관 : 데이콘
 3. 설명 : 총 19가지의 도배 하자 유형을 분류하는 AI 모델을 개발하여야 한다. 도배 하자 유형은 다음과 같다.<br>
 (가구수정, 걸레받이수정, 곰팡이, 꼬임, 녹오염, 들뜸, 면불량, 몰딩수정, 문틀창틀수정, 반점, 석고수정, 오염, 오타공, 울음, 이음부불량, 터짐, 틈새과다, 피스, 훼손)
-4. 결과
-EfficientNet_b4 사전 학습 모델을 불러와 추가 레이어를 쌓은 뒤 학습시킨 결과 : F1score 0.539
+4. 결과<br>
+EfficientNet_b4 사전 학습 모델을 불러와 추가 레이어를 쌓은 뒤 학습시킨 결과, F1score 0.539를 기록하였다.
 
 ### ✅ 데이터셋 설명
 1. train [폴더]
@@ -67,4 +67,4 @@ PyTorch의 nn.CrossEntropyLoss() 손실 함수는 라벨을 long 형식으로 �
 
 ### ✅ 결과
 👍리더보드(PUBLIC) : 275/1152(등)
->![image](https://github.com/2shin0/Papering-Flaw/assets/150658909/2f9504f0-a843-4bbf-a93a-31eae3dcc79c)
+![image](https://github.com/2shin0/Papering-Flaw/assets/150658909/2f9504f0-a843-4bbf-a93a-31eae3dcc79c)
