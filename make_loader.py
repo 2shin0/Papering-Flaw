@@ -9,14 +9,11 @@ train_transform = A.Compose([
                             A.Normalize(mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225), max_pixel_value=255.0, always_apply=False, p=1.0),
                             ToTensorV2()
                             ])
-
 test_transform = A.Compose([
                             A.Resize(CFG['IMG_SIZE'],CFG['IMG_SIZE']),
                             A.Normalize(mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225), max_pixel_value=255.0, always_apply=False, p=1.0),
                             ToTensorV2()
                             ])
-
-
 
 def make_loader(train, val, test, train_transform, test_transform):
     train_dataset = CustomDataset(train['img_path'].values, train['label'].values, train_transform)
