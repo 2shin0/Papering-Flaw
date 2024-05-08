@@ -15,9 +15,7 @@ def inference(le, model, test_loader, device):
     
     preds = le.inverse_transform(preds)
     return preds
-
-
-
+    
 def submit_file(preds):
     submit = pd.read_csv('./data/sample_submission.csv')
     submit['label'] = preds
