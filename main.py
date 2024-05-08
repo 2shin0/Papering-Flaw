@@ -4,7 +4,6 @@ import torch
 from model import model_make
 from submission1 import inference, submit_file
 
-
 def main():
     device = torch.device('cpu') if torch.cuda.is_available() else torch.device('cpu')
     train2, val, le = make_train_df()
