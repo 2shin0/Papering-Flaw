@@ -8,6 +8,7 @@
 4. 결과<br>
 EfficientNet_b4 사전 학습 모델을 불러와 추가 레이어를 쌓은 뒤 학습시킨 결과, F1score 0.539를 기록하였다.
 <br>
+
 ### 📁 데이터셋
 1. train [폴더]
 - 19개의 Class 폴더 내 png 파일 존재
@@ -24,6 +25,7 @@ EfficientNet_b4 사전 학습 모델을 불러와 추가 레이어를 쌓은 뒤
 - id : 평가 샘플 고유 id  
 - label : 예측한 도배 하자 Class
 <br>
+
 ### 🔗 개발환경 (requirements.txt)
 
 ```
@@ -51,6 +53,7 @@ image = cv2.imdecode(img_array, cv2.IMREAD_COLOR)
 
 📌 클래스 불균형이 심하여 데이터 under/oversampling을 시도했으나, 성능이 오히려 낮아져서 적용하지 않았다.
 <br>
+
 ### 📈 모델 선정 및 학습 (model.py, model_train.py)
 1. 모델 선정 : EfficientNet_b4<br>
 EfficientNet은 이미지 분류 작업에 있어서 효율적이고 우수한 성능을 보이는 딥러닝 모델이다. 네트워크의 깊이, 너비, 해상도의 크기를 조절하여 최적의 모델 구조를 찾아내는 compound scaling 방법을 적용하여 최소한의 파라미터로 높은 성능을 낸다. EfficientNet b0~b7 중 개발환경과 성능을 고려하여 b4를 선정하였다.
@@ -65,6 +68,7 @@ PyTorch의 nn.CrossEntropyLoss() 손실 함수는 라벨을 long 형식으로 �
 
 이 코드에서 라벨을 long 형식으로 변환하는 이유는 모델이 예상한 클래스 확률과 실제 클래스를 비교할 때 타입을 일치시키기 위해서다. 또한, GPU를 사용하는 경우에는 모든 텐서가 동일한 타입을 가져야 하므로, GPU로 데이터를 이동하기 전에 라벨을 long 형식으로 변환하는 것이 중요하다.
 <br>
+
 ### ✅ 결과
 👍리더보드(PUBLIC) : 275/1152(등)
 
