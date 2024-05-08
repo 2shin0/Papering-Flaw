@@ -26,15 +26,11 @@ def make_train_df():
 
     return train, val, le
 
-
 def make_test_df():
     test = pd.read_csv('./data/test.csv')
     test['img_path'] = test['img_path'].str.replace("./","./data/")
     
     return test
-
-
-
 
 class CustomDataset(Dataset):
     def __init__(self, img_path_list, label_list, transforms=None):
@@ -59,7 +55,3 @@ class CustomDataset(Dataset):
         
     def __len__(self):
         return len(self.img_path_list)
-
-
-
-
