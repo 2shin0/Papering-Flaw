@@ -39,6 +39,7 @@
 ---
 ### ✅ 결과
 리더보드(PUBLIC) : 275/1152(등)
+>
 ![image](https://github.com/2shin0/Papering-Flaw/assets/150658909/2f9504f0-a843-4bbf-a93a-31eae3dcc79c)
 
 ---
