@@ -2,7 +2,7 @@ from processing import make_train_df, make_test_df
 from make_loader import train_transform, test_transform, make_loader
 import torch
 from model import model_make
-from submission1 import inference, submit_file
+from submission import inference, submit_file
 
 def main():
     device = torch.device('cpu') if torch.cuda.is_available() else torch.device('cpu')
