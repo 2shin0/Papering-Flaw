@@ -5,7 +5,6 @@ from setting import CFG
 import torch.optim as optim
 from model_train import train_h
 
-
 class BaseModel(nn.Module):
     def __init__(self, num_classes=19):
         super(BaseModel, self).__init__()
@@ -21,7 +20,6 @@ class BaseModel(nn.Module):
         x = self.backbone(x)
         x = self.classifier(x)
         return x
-    
 
 def model_make(train_loader, val_loader, device):
     model = BaseModel()
