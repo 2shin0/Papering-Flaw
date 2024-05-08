@@ -17,5 +17,5 @@ def inference(le, model, test_loader, device):
 def submit_file(preds):
     submit = pd.read_csv('./data/sample_submission.csv')
     submit['label'] = preds
-    submit.to_csv('./baseline_submit07.csv', index=False)
+    submit.to_csv('./baseline_submit.csv', index=False)
     return submit
