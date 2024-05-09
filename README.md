@@ -66,7 +66,7 @@ tqdm
 
 **2. 한글 경로를 읽기 위한 encoding & decoding**
 
-- cv2가 한글 경로를 인식하지 못하는 문제 해결을 위해서 이미지를 numpy 배열로 우선 encoding 후, 변환된 배열을 다시 decoding하여 이미지로 변환했다.
+cv2가 한글 경로를 인식하지 못하는 문제 해결을 위해서 이미지를 numpy 배열로 우선 encoding 후, 변환된 배열을 다시 decoding하여 이미지로 변환했다.
 ```python
 img_array = np.fromfile(img_path, np.uint8)
 image = cv2.imdecode(img_array, cv2.IMREAD_COLOR)
@@ -76,13 +76,17 @@ image = cv2.imdecode(img_array, cv2.IMREAD_COLOR)
 
 ![image](https://github.com/2shin0/Papering-Flaw/assets/150658909/b635cb9d-80a7-4c24-8dac-a043df254906)
 
-- 클래스 불균형이 심해 데이터 under/oversampling 필요성을 인식했다. 400개 이상의 데이터를 가진 클래스는 비복원 추출로 400개 추출했으며, 50개 이하의 데이터를 가진 클래스는 복원 추출로 50개를 추출했다. 그 밖에도 다양한 방법을 시도했으나 그대로 학습시키는 것보다 성능이 낮아지는 것을 확인했다. 따라서 최종 모델 학습은 클래스 불균형 해소를 하지 않고 진행했다.
+클래스 불균형이 심해 데이터 under/oversampling 필요성을 인식했다. 400개 이상의 데이터를 가진 클래스는 비복원 추출로 400개 추출했으며, 50개 이하의 데이터를 가진 클래스는 복원 추출로 50개를 추출했다. 그 밖에도 다양한 방법을 시도했으나 그대로 학습시키는 것보다 성능이 낮아지는 것을 확인했다. 따라서 최종 모델 학습은 클래스 불균형 해소를 하지 않고 진행했다.
 
 ---
 
 ### 📈 모델 선정 및 학습 (model.py, model_train.py)
 **1. 모델 선정 : EfficientNet_b4**<br>
-EfficientNet은 이미지 분류 작업에 있어서 효율적이고 우수한 성능을 보이는 딥러닝 모델이다. 네트워크의 깊이, 너비, 해상도의 크기를 조절하여 최적의 모델 구조를 찾아내는 compound scaling 방법을 적용하여 최소한의 파라미터로 높은 성능을 낸다. EfficientNet b0~b7 중 개발환경과 성능을 고려하여 b4를 선정하였다.
+
+![image](https://github.com/2shin0/Papering-Flaw/assets/150658909/2aca9c2d-b12c-41e4-bd52-f7560841c3bf)
+<EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks, 2020, Mingxing Tan & Quoc V. Le><br>
+
+EfficientNet은 이미지 분류 작업에 있어서 적은 파라미터 수에도 매우 효율적이고 우수한 성능을 보이는 딥러닝 모델이다. 네트워크의 깊이, 너비, 해상도의 크기를 조절하여 최적의 모델 구조를 찾아내는 compound scaling 방법을 적용하여 최소한의 파라미터로 높은 성능을 낸다. 위 결과를 바탕으로 EfficientNet b0~b7 중 파라미터 수 대비 정확도를 고려한 EfficientNet b4를 사전 학습 모델로 선정했다.
 
 **2. label 형식 int → long 변환**
 
