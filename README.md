@@ -38,11 +38,11 @@
 - vscode를 열어서 terminal을 열어주세요.
 - terminal 에서 다음 명령문을 입력해 파일을 받아주세요.<br>
   ```$ git clone --single-branch --branch main https://github.com/2shin0/Papering-Flaw.git```
-- 내려받은 폴더로 들어가서 가상환경을 만들어 실행해주세요.
+- 내려받은 폴더로 들어가서 가상환경을 만들어 실행해주세요.<br>
   ```$ python -m venv (원하는 가상환경 이름)```
-- 가상환경 안에서 다음 명령문을 통해 필요한 라이브러리를 설치해주세요.
+- 가상환경 안에서 다음 명령문을 통해 필요한 라이브러리를 설치해주세요.<br>
   ```$ pip install -r requirements.txt```
-- 이제 다음 명령문을 입력해 학습된 모델 및 test 데이터셋 예측결과 csv를 받을 수 있습니다.
+- 이제 다음 명령문을 입력해 학습된 모델 및 test 데이터셋 예측결과 csv를 받을 수 있습니다.<br>
   ```$ python main.py```
 
 **3. requirements.txt**
