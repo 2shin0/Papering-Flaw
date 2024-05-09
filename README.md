@@ -28,9 +28,19 @@
 
 ---
 
-### 🔗 개발환경 (requirements.txt)
+### 🔗 개발환경 세팅
+**1. 설치파일**
+- Python 3.12.0
+- Visual Studio Code
+- Git
 
+**2. 사용방법**
+- vscode를 열어서 terminal을 열어주세요.
+- terminal 에서 다음 명령문을 입력해 파일을 받아주세요.<br>
+  ```$ git clone --single-branch --branch main https://github.com/2shin0/Papering-Flaw.git```
+- 안녕
 ```
+# requirements.txt
 pandas==2.2.2
 opencv-python==4.9.0.80
 imbalanced-learn==0.12.2
