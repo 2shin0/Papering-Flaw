@@ -84,6 +84,7 @@ image = cv2.imdecode(img_array, cv2.IMREAD_COLOR)
 **1. 모델 선정 : EfficientNet_b4**<br>
 
 ![image](https://github.com/2shin0/Papering-Flaw/assets/150658909/2aca9c2d-b12c-41e4-bd52-f7560841c3bf)
+
 <EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks, 2020, Mingxing Tan & Quoc V. Le><br>
 
 EfficientNet은 이미지 분류 작업에 있어서 적은 파라미터 수에도 매우 효율적이고 우수한 성능을 보이는 딥러닝 모델이다. 네트워크의 깊이, 너비, 해상도의 크기를 조절하여 최적의 모델 구조를 찾아내는 compound scaling 방법을 적용하여 최소한의 파라미터로 높은 성능을 낸다. 위 결과를 바탕으로 EfficientNet b0~b7 중, 파라미터 수 대비 정확도를 고려한 EfficientNet b4를 사전 학습 모델로 선정했다.
