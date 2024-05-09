@@ -61,17 +61,21 @@ tqdm
 
 ### 📊 데이터 전처리 (processing.py)
 **1. 이미지 경로 변경**
-- train data의 img_path '\\' → '/'
-- test data의 img_path './' → './data/'
+- 경로 인식을 위해 train data의 img_path 변경 : '\\' → '/'
+- 경로 인식을 위해 test data의 img_path 변경 : './' → './data/'
 
-**2. 한글 주소를 읽기 위한 encoding & decoding**
+**2. 한글 경로를 읽기 위한 encoding & decoding**
 
+- cv2가 한글 경로를 인식하지 못하는 문제 해결을 위해서 이미지를 numpy 배열로 우선 encoding 후, 변환된 배열을 다시 decoding하여 이미지로 변환했다.
 ```python
 img_array = np.fromfile(img_path, np.uint8)
 image = cv2.imdecode(img_array, cv2.IMREAD_COLOR)
 ```
 
-📌 클래스 불균형이 심하여 데이터 under/oversampling을 시도했으나, 성능이 오히려 낮아져서 적용하지 않았다.
+**3. 클래스 불균형 문제 탐구**
+![image](https://github.com/2shin0/Papering-Flaw/assets/150658909/b635cb9d-80a7-4c24-8dac-a043df254906)
+
+- 클래스 불균형이 심해 데이터 under/oversampling 필요성을 인식했다. 400개 이상의 데이터를 가진 클래스는 비복원 추출로 400개 추출했으며, 50개 이하의 데이터를 가진 클래스는 복원 추출로 50개를 추출했다. 그 밖에도 다양한 방법을 시도했으나 그대로 학습시키는 것보다 성능이 낮아지는 것을 확인했다. 따라서 최종 모델 학습은 클래스 불균형 해소를 하지 않고 진행했다.
 
 ---
 
